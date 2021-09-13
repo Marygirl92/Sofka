@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Iniciar Session</h2>
+@using(Html.BeginForm("Profile", "Juego",FormMethod.Post,new { @class = "col s12" })) {
+
+    <div>
+        <div class="input-field">
+            <input placeholder="Ingrese su Usuario:" id="user" type="text" class="validate" name="user">
+            <label for="user">Usuario:</label>
+        </div>
+        <div class="input-field">
+            <input placeholder="Ingrese su Contraseña:" id="contrasenia" type="password" class="validate" name="contrasenia">
+            <label for="contrasenia">Contraseña:</label>
+        </div>
+        <input type="submit" value="Iniciar Session" class="btn btn-primary" />
+    </div>
+}
+<p>@ViewBag.message</p>

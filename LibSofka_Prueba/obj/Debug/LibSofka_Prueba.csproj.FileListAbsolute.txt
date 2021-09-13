@@ -1,0 +1,6 @@
+C:\Users\LENOVO\source\repos\LibSofka_Prueba\bin\Debug\LibSofka_Prueba.dll
+C:\Users\LENOVO\source\repos\LibSofka_Prueba\bin\Debug\LibSofka_Prueba.pdb
+C:\Users\LENOVO\source\repos\LibSofka_Prueba\obj\Debug\LibSofka_Prueba.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\LibSofka_Prueba\obj\Debug\LibSofka_Prueba.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\LibSofka_Prueba\obj\Debug\LibSofka_Prueba.dll
+C:\Users\LENOVO\source\repos\LibSofka_Prueba\obj\Debug\LibSofka_Prueba.pdb
