@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -117,15 +125,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="answer.cs">
+      <DependentUpon>Sofka.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="category.cs">
+      <DependentUpon>Sofka.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuegoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="player.cs">
+      <DependentUpon>Sofka.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="question.cs">
+      <DependentUpon>Sofka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sofka.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sofka.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sofka.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sofka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sofka.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sofka.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>Sofka.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -133,6 +172,16 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Sofka.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sofka.Context.cs</LastGenOutput>
+      <DependentUpon>Sofka.edmx</DependentUpon>
+    </Content>
+    <Content Include="Sofka.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sofka.edmx</DependentUpon>
+      <LastGenOutput>Sofka.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -151,7 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -160,12 +208,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Juego\Profile.cshtml" />
+    <EntityDeploy Include="Sofka.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sofka.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Sofka.edmx.diagram">
+      <DependentUpon>Sofka.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Juego\Jugar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibSofka_Prueba\LibSofka_Prueba.csproj">
-      <Project>{dad780e3-70e3-4eca-80e6-2093ad58c626}</Project>
-      <Name>LibSofka_Prueba</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

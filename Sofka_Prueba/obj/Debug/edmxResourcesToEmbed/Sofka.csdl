@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sofka_juegoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="answer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="texto" Type="String" MaxLength="125" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="points" Type="Int16" Nullable="false" />
+    <Property Name="question_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="question" Relationship="Self.FK__answer__question__3D5E1FD2" FromRole="answer" ToRole="question" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="question" Relationship="Self.FK__question__catego__398D8EEE" FromRole="category" ToRole="question" />
+  </EntityType>
+  <EntityType Name="player">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="125" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="usuario_id" Type="Int32" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="max_points" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__player__usuario___4316F928" FromRole="player" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="texto" Type="String" MaxLength="225" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="answer" Relationship="Self.FK__answer__question__3D5E1FD2" FromRole="question" ToRole="answer" />
+    <NavigationProperty Name="category" Relationship="Self.FK__question__catego__398D8EEE" FromRole="question" ToRole="category" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_text" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="player" Relationship="Self.FK__player__usuario___4316F928" FromRole="usuario" ToRole="player" />
+  </EntityType>
+  <Association Name="FK__answer__question__3D5E1FD2">
+    <End Role="question" Type="Self.question" Multiplicity="1" />
+    <End Role="answer" Type="Self.answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="answer">
+        <PropertyRef Name="question_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__question__catego__398D8EEE">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
+    <End Role="question" Type="Self.question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="question">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__player__usuario___4316F928">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="player" Type="Self.player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="player">
+        <PropertyRef Name="usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sofka_juegoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="answer" EntityType="Self.answer" />
+    <EntitySet Name="category" EntityType="Self.category" />
+    <EntitySet Name="player" EntityType="Self.player" />
+    <EntitySet Name="question" EntityType="Self.question" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="FK__answer__question__3D5E1FD2" Association="Self.FK__answer__question__3D5E1FD2">
+      <End Role="question" EntitySet="question" />
+      <End Role="answer" EntitySet="answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__question__catego__398D8EEE" Association="Self.FK__question__catego__398D8EEE">
+      <End Role="category" EntitySet="category" />
+      <End Role="question" EntitySet="question" />
+    </AssociationSet>
+    <AssociationSet Name="FK__player__usuario___4316F928" Association="Self.FK__player__usuario___4316F928">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="player" EntitySet="player" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

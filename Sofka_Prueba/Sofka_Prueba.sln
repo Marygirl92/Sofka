@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Db", "Db", "{EA7DBD0A-F8AE-
 		..\..\..\OneDrive\Documentos\SQL Server Management Studio\Script_Sofka.sql = ..\..\..\OneDrive\Documentos\SQL Server Management Studio\Script_Sofka.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSofka_Prueba", "..\LibSofka_Prueba\LibSofka_Prueba.csproj", "{DAD780E3-70E3-4ECA-80E6-2093AD58C626}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,10 +20,6 @@ Global
 		{F33F0938-BF0D-494F-BABE-19526CC0A427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33F0938-BF0D-494F-BABE-19526CC0A427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F33F0938-BF0D-494F-BABE-19526CC0A427}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAD780E3-70E3-4ECA-80E6-2093AD58C626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAD780E3-70E3-4ECA-80E6-2093AD58C626}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAD780E3-70E3-4ECA-80E6-2093AD58C626}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAD780E3-70E3-4ECA-80E6-2093AD58C626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -84,5 +84,7 @@ C:\Users\LENOVO\source\repos\Sofka_Prueba\obj\Debug\Sofka_Prueba.csproj.CoreComp
 C:\Users\LENOVO\source\repos\Sofka_Prueba\obj\Debug\Sofka_Prueba.csproj.CopyComplete
 C:\Users\LENOVO\source\repos\Sofka_Prueba\obj\Debug\Sofka_Prueba.dll
 C:\Users\LENOVO\source\repos\Sofka_Prueba\obj\Debug\Sofka_Prueba.pdb
-C:\Users\LENOVO\source\repos\Sofka_Prueba\bin\LibSofka_Prueba.dll
-C:\Users\LENOVO\source\repos\Sofka_Prueba\bin\LibSofka_Prueba.pdb
+C:\Users\LENOVO\source\repos\Sofka_Prueba\bin\EntityFramework.dll
+C:\Users\LENOVO\source\repos\Sofka_Prueba\bin\EntityFramework.SqlServer.dll
+C:\Users\LENOVO\source\repos\Sofka_Prueba\bin\EntityFramework.xml
+C:\Users\LENOVO\source\repos\Sofka_Prueba\bin\EntityFramework.SqlServer.xml
